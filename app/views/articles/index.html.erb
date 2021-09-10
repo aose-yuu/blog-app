@@ -26,7 +26,7 @@
                         <%= image_tag 'default-avatar.png' %>
                         <div>
                             <p>aose-yuu</p>
-                            <p>2021/0907</p>
+                            <p><%= I18n.l(article.created_at, format: :default) %></p>
                         </div>
                     </div>
                 </div>
