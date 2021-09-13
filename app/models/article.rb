@@ -30,8 +30,11 @@ class Article < ApplicationRecord
     I18n.l(created_at, format: :default)
   end
 
-  private
+  def author_name
+    user.display_name
+  end
 
+  private
   def validate_title_and_content_length
     char_count = title.length + content.length
     errors.add(:content, 'は100文字以上必要です。') unless char_count > 100
